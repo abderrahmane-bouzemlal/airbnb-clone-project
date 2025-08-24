@@ -1,5 +1,43 @@
 # airbnb-clone-project
 
+## 🏠 Project Overview
+
+### 📌 Description
+
+This project is a **web-based Airbnb clone** that allows users to list, browse, and book short-term rental properties. The platform is designed to support both **guests** and **hosts**, featuring functionalities such as user authentication, property listings, availability calendars, booking management, and secure payments.
+
+### 🎯 Project Goals
+
+* Build a scalable and responsive web application for booking accommodations.
+* Enable users to register, list properties, and manage bookings with ease.
+* Ensure seamless integration between frontend and backend using RESTful APIs.
+* Implement a secure and user-friendly interface for both hosts and travelers.
+* Follow best practices in software architecture, testing, and deployment.
+
+### 🧰 Tech Stack
+
+**Frontend:**
+
+* **Vue.js** – JavaScript framework for building the interactive user interface.
+* **Vue Router** – Handles client-side routing.
+* **Axios** – For making API requests to the Django backend.
+* **Tailwind CSS / Bootstrap (optional)** – For fast and responsive UI design.
+
+**Backend:**
+
+* **Django** – High-level Python web framework for server-side logic.
+* **Django REST Framework (DRF)** – For building RESTful APIs consumed by the frontend.
+* **PostgreSQL** – Relational database for storing user data, listings, bookings, etc.
+* **Celery + Redis** – For handling asynchronous tasks such as email notifications (optional).
+* **Stripe or PayPal API** – For handling secure payments (optional).
+
+**DevOps & Deployment:**
+
+* **Docker** – Containerization for development and deployment.
+* **Nginx + Gunicorn** – Web server and application server stack.
+* **GitHub Actions / GitLab CI** – CI/CD pipelines for automated testing and deployment.
+* **AWS / DigitalOcean / Heroku** – Cloud platforms for deployment.
+
 ## 🧑‍💻 Team Roles
 
 Below are the key roles involved in developing this Airbnb-style application using Django and Vue.js:
