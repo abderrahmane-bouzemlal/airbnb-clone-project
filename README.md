@@ -222,3 +222,35 @@ Below are the key roles involved in developing this Airbnb-style application usi
 * Automates deployment processes for both frontend and backend.
 * Monitors application health and server uptime.
 * Ensures secure and scalable cloud infrastructure (e.g., AWS, Azure, or Docker/Kubernetes).
+
+## 🧩 Feature Breakdown
+
+### 👤 User Management
+
+Handles user registration, authentication, and profile management. This feature supports both **guests** and **hosts**, allowing users to securely log in, update their profiles, and access role-specific functionalities.
+
+### 🏠 Property Management
+
+Enables hosts to create, update, and manage property listings. Each listing includes details like title, description, location, price, and availability, forming the core of the rental marketplace.
+
+### 📅 Booking System
+
+Allows guests to book available properties for specific dates. The system handles check-in/check-out logic, availability validation, and status updates (e.g., confirmed, pending, canceled).
+
+### 💳 Payment Processing
+
+Processes and records payments associated with bookings. Integrates with external payment providers (e.g., Stripe or PayPal) to handle secure transactions, ensuring a smooth checkout experience for guests.
+
+### ⭐ Review System
+
+Enables users to leave reviews and ratings on properties after their stay. This promotes transparency and helps future guests make informed decisions based on past experiences.
+
+### 🧾 API Documentation
+
+All backend features are exposed via a documented RESTful API following the OpenAPI standard. A GraphQL interface is also provided for advanced querying, enabling seamless frontend-backend integration.
+
+### 🚀 Performance Optimization
+
+Implements caching and indexing strategies to ensure fast data access and scalability. These optimizations support a responsive user experience even as the dataset grows.
+
+
