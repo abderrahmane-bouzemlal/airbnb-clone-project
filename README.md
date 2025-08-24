@@ -14,7 +14,7 @@ This project is a **web-based Airbnb clone** that allows users to list, browse, 
 * Implement a secure and user-friendly interface for both hosts and travelers.
 * Follow best practices in software architecture, testing, and deployment.
 
-### 🧰 Tech Stack
+### 🧰 Technology Stack
 
 **Frontend:**
 
