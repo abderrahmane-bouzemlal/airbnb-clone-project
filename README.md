@@ -38,6 +38,124 @@ This project is a **web-based Airbnb clone** that allows users to list, browse, 
 * **GitHub Actions / GitLab CI** – CI/CD pipelines for automated testing and deployment.
 * **AWS / DigitalOcean / Heroku** – Cloud platforms for deployment.
 
+## 🗃️ Database Design
+
+The database schema is designed to support all core Airbnb-like features including user management, property listings, bookings, payments, and reviews. Below are the key entities, their fields, and how they relate to one another.
+
+### 🧑 Users
+
+Represents both guests and hosts on the platform.
+
+**Key Fields:**
+
+* `id` (Primary Key)
+* `username` – Unique user identifier
+* `email` – For communication and login
+* `password_hash` – Securely stored password
+* `is_host` – Boolean indicating if the user can list properties
+
+**Relationships:**
+
+* A user **can create** multiple properties (if a host).
+* A user **can make** multiple bookings (if a guest).
+* A user **can leave** multiple reviews.
+
+---
+
+### 🏘️ Properties
+
+Represents accommodations listed by hosts.
+
+**Key Fields:**
+
+* `id` (Primary Key)
+* `host` (Foreign Key → Users)
+* `title` – Name of the listing
+* `description` – Detailed info about the property
+* `location` – Address or coordinates
+
+**Relationships:**
+
+* A property **belongs to** one host.
+* A property **can have** multiple bookings.
+* A property **can receive** multiple reviews.
+
+---
+
+### 📅 Bookings
+
+Handles reservation information for guests.
+
+**Key Fields:**
+
+* `id` (Primary Key)
+* `property` (Foreign Key → Properties)
+* `guest` (Foreign Key → Users)
+* `check_in` – Start date of booking
+* `check_out` – End date of booking
+* `status` – Confirmed, canceled, pending, etc.
+
+**Relationships:**
+
+* A booking **is made by** one user (guest).
+* A booking **is linked to** one property.
+* A booking **can be linked to** one payment.
+
+---
+
+### 💳 Payments
+
+Tracks financial transactions related to bookings.
+
+**Key Fields:**
+
+* `id` (Primary Key)
+* `booking` (Foreign Key → Bookings)
+* `amount` – Total payment amount
+* `status` – Paid, failed, pending
+* `payment_method` – e.g., Stripe, PayPal
+
+**Relationships:**
+
+* A payment **belongs to** one booking.
+
+---
+
+### ⭐ Reviews
+
+Allows users to provide feedback on properties.
+
+**Key Fields:**
+
+* `id` (Primary Key)
+* `property` (Foreign Key → Properties)
+* `author` (Foreign Key → Users)
+* `rating` – Score (e.g., 1 to 5)
+* `comment` – Text review
+* `created_at` – Timestamp
+
+**Relationships:**
+
+* A review **is written by** one user.
+* A review **is about** one property.
+
+---
+
+### 🔗 Entity Relationship Summary
+
+```plaintext
+User ────────┐
+    ▲        │
+    │        ▼
+ Reviews   Properties ◄────────── User (Host)
+    ▲          │
+    │          ▼
+  Bookings ◄───┘
+    │
+    ▼
+ Payments
+```
+
 ## 🧑‍💻 Team Roles
 
 Below are the key roles involved in developing this Airbnb-style application using Django and Vue.js:
